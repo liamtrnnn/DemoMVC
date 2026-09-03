@@ -1,0 +1,85 @@
+@model DemoMVC.Models.Student
+
+@{
+    ViewData["Title"] = "Thông tin sinh viên";
+}
+
+<h1>THÔNG TIN SINH VIÊN</h1>
+
+<form asp-controller="Student"
+      asp-action="Index"
+      method="post">
+
+    <!-- HỌ TÊN -->
+    <div>
+        <label asp-for="FullName">Họ tên</label>
+
+        <input asp-for="FullName"
+               class="form-control"
+               placeholder="Nhập họ tên" />
+
+        <span asp-validation-for="FullName"
+              class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <!-- ĐỊA CHỈ -->
+    <div>
+        <label asp-for="Address">Địa chỉ</label>
+
+        <textarea asp-for="Address"
+                  class="form-control"
+                  rows="4"
+                  placeholder="Nhập địa chỉ"></textarea>
+
+        <span asp-validation-for="Address"
+              class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <!-- TRƯỜNG ĐẠI HỌC -->
+    <div>
+        <label asp-for="University">Trường đại học</label>
+
+        <select asp-for="University"
+                class="form-control">
+
+            <option value="">-- Chọn trường đại học --</option>
+
+            <option value="Đại học Mỏ - Địa chất">
+                Đại học Mỏ - Địa chất
+            </option>
+
+            <option value="Đại học Bách khoa Hà Nội">
+                Đại học Bách khoa Hà Nội
+            </option>
+
+            <option value="Đại học Kinh tế Quốc dân">
+                Đại học Kinh tế Quốc dân
+            </option>
+
+            <option value="Đại học Thương mại">
+                Đại học Thương mại
+            </option>
+
+        </select>
+
+        <span asp-validation-for="University"
+              class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <button type="submit">
+        GỬI THÔNG TIN
+    </button>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
