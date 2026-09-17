@@ -4,15 +4,13 @@ namespace DemoMVC.Models
 {
     public class Student
     {
-        public int Id { get; set; }
-
-        [Required(ErrorMessage = " nhập họ tên")]
+        [Required]
         public string FullName { get; set; }
 
-        [Required(ErrorMessage = " nhập địa chỉ")]
+        [Required]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = " chọn trường đại học")]
+        [Required]
         public string University { get; set; }
     }
 }

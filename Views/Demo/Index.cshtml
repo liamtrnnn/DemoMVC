@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+}
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">
+        QUẢN LÝ SẢN PHẨM
+    </h1>
+
+    @if (TempData["ThongBao"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            <strong>Thành công!</strong>
+            @TempData["ThongBao"]
+
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert">
+            </button>
+        </div>
+    }
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            Danh sách sản phẩm
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Laptop</td>
+                        <td>20.000.000</td>
+                        <td>
+                            <a asp-controller="Demo"
+                               asp-action="Delete"
+                               class="btn btn-danger">
+                                Xóa
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

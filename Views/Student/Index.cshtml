@@ -6,8 +6,15 @@
 
 <h1>THÔNG TIN SINH VIÊN</h1>
 
+<!-- DỮ LIỆU ĐƯỢC GỬI TỪ CONTROLLER BẰNG VIEWBAG -->
+<p>Họ tên: @ViewBag.HoTen</p>
+<p>Quê quán: @ViewBag.QueQuan</p>
+<p>Trường đại học: @ViewBag.University</p>
+
+<hr />
+
 <form asp-controller="Student"
-      asp-action="Index"
+      asp-action="Index"    
       method="post">
 
     <!-- HỌ TÊN -->
